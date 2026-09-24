@@ -26,8 +26,8 @@ touch "$HOME/.config/tql/tql.sqlite"
 
 "$ROOT/bin/omarchy-install-tql" >/dev/null
 
-grep -qxF "omarchy-pkg-add:tql-bin" "$TEST_LOG" || fail "tql install adds the tql-bin package" "$(cat "$TEST_LOG")"
-pass "tql install adds the tql-bin package"
+grep -qxF "omarchy-pkg-add:tql" "$TEST_LOG" || fail "tql install adds the tql package" "$(cat "$TEST_LOG")"
+pass "tql install adds the tql package"
 
 grep -qxF "omarchy-tui-install:tql tql tile $ROOT/applications/icons/tql.png" "$TEST_LOG" || fail "tql install creates a launcher with the bundled icon" "$(cat "$TEST_LOG")"
 pass "tql install creates a launcher with the bundled icon"
@@ -38,8 +38,8 @@ pass "tql ships its launcher icon"
 : >"$TEST_LOG"
 "$ROOT/bin/omarchy-remove-tql" >/dev/null
 
-grep -qxF "omarchy-pkg-drop:tql-bin" "$TEST_LOG" || fail "tql removal drops the tql-bin package" "$(cat "$TEST_LOG")"
-pass "tql removal drops the tql-bin package"
+grep -qxF "omarchy-pkg-drop:tql" "$TEST_LOG" || fail "tql removal drops the tql package" "$(cat "$TEST_LOG")"
+pass "tql removal drops the tql package"
 
 grep -qxF "omarchy-tui-remove:tql" "$TEST_LOG" || fail "tql removal removes its launcher" "$(cat "$TEST_LOG")"
 pass "tql removal removes its launcher"

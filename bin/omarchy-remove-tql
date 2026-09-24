@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-omarchy-pkg-drop tql-bin
+omarchy-pkg-drop tql
 OMARCHY_REMOVE_NOTIFY=false omarchy-tui-remove tql
 
 echo ""
